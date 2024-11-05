@@ -1,0 +1,120 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.instagram {
+    max-width: 100px;
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    object-fit: contain;
+    }
+h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+body {
+        background-color: #faf2f4 ;
+} 
+
+header {
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.prezentare {
+    width: 95%;
+    height: 300px;
+    color: #faf2f4;
+    background-color: #23233d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.invitati {
+    width: 80%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.invitati h2 {
+    margin-bottom: 10px;
+}
+
+.invitat {
+    display: inline-block;
+    width: 30%;
+    height: 100px;
+    background-color: #23233d;
+    color: #faf2f4;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.detalii {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.ce-vei-invata, .locatie {
+    width: 45%;
+    background-color: #23233d;
+    color: #faf2f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+a:link {color: #faf2f4;}
+a:visited {color: #faf2f4;}
+a:hover {opacity: 0.7;}
+a:active {color: #faf2f4;}
+
+
+.ce-vei-invata h3 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0;
+}
+
+footer button, .locatie button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #faf2f4;
+    color: #23233d;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer button:hover, .locatie button:hover {
+    opacity: 0.7;
+}
