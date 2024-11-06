@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nume Proiect</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/341c0d86b2.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div></div>
+    <div></div>
+    <div></div>
     <header>
-        <i class="fa-brands fa-instagram" id="instagram"> </i>
         <h1>Pirati la cutite</h1>
+        <section class="icon">
+            <i class="fa-brands fa-instagram" id="instagram"> </i>
+                <i class="fa-brands fa-facebook"></i>
+           </section>
     </header>
 
     <section class="prezentare">
@@ -57,15 +63,30 @@
         </div>
     </section>
 
-    <footer>
-        <a href="https://ase.ro/"> <img src="images/sponsor1.jpeg"> </a>
-        <a href="https://www.lidl.ro/"> <img src="images/sponsor2.png"></a>
-        <a href="https://www.barilla.com/ro-ro"><img src="images/sponsor3.png"></a>
-        <a href="https://www.ariel.co.uk/en-gb"><img src="images/sponsor4.png"></a>
+    <footer class="sponsori">
+        <a href="https://ase.ro/"> <button>Academia de Studii Economice</button> </a>
+        <a href="https://www.lidl.ro/"> <button>Lidl</button></a>
+        <a href="https://www.barilla.com/ro-ro"><button>Barilla</button></a>
+        <a href="https://www.ariel.co.uk/en-gb"><button>Ariel</button></a>
     </footer>
 
     <section class="formular" id="formular">
-        FORMULAR
+        <p>Înscriere Pirați la cuțite</p>
+        <form action="/submit-form" method="post">
+                <label for="numepre">Nume si prenume:</label><br>
+            <input type="text" id="numepre" name="numepre">
+            <br>
+            <label for="mail">Adresa de mail:</label><br>
+            <input type="email" id="mail" name="mail">
+            <br>
+            <label for="telefon">Numar de telefon:</label><br>
+            <input type="number" id="telefon" name="telefon">
+            <br>
+            <label for="data_nasterii">Data nasterii:</label><br>
+            <input type="date" id="data_nasterii" name="data_nasterii">
+            <br>
+                <input type="submit" value="Submit">
+        </form>
     </section>
     
 </body>
