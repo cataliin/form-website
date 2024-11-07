@@ -14,35 +14,34 @@ app.listen(port, () => console.log(`Serverul merge pe portul ${port}`));
 
 app.use(express.static(path.join(__dirname,'public')));
 
-// app.get("/insertRandomPerson", async (req,res) =>{
-// const persoana1 = {
-//     numePersoana: "Carmatiu Pluntiu",
-//     dataNasterii: "2010-04-23",
-//     emailPersoana: "testest@gmail.com",
-//     numarTelefon: "0719238122",
-// };
-
-// const allUsers = await utils.getAllUsers();
-// const userExists = allUsers.some(allUsers => (allUsers.numePersoana = "Carmatiu Pluntiu"));
-// if (!userExists)
-//     await utils.insertUser(persoana1);
-
-// res.status(200).send("Pentru browser");
-// });
-
 app.post('/submit-form',[
-body('numepre').isString().notEmpty().withMessage("Numele este obligatoriu si trebuie sa fie un nume valid"),
+body('numepre').isString().notEmpty().withMessage("Numele este obligatoriu si trebuie sa fie un nume valid")
+.matches(/^[a-zA-Z\s]+$/).withMessage("Numele nu trebuie sa contina cifre sau simboluri"),
 body('data_nasterii').isDate().withMessage("Data nasterii este obligatorie si trebuie sa fie o data valida"),
 body('mail').isEmail().withMessage("Introdu o adresa de email valida"),
 body('telefon').matches(/^07\d{8}$/).withMessage("Introdu un numar de telefon valid") /// validatori pentru datele de intrare
 ], async(req,res) =>{
-    const errors = validationResult(req); 
+    const errors = validationResult(req);
     if (!errors.isEmpty()) 
-            return res.status(400).json({ errors: errors.array() }); 
-
+        return res.status(400).send(errors.array().map(error => error.msg).join(', '));
 const {numepre,data_nasterii,mail,telefon} = req.body;
+
+if (data_nasterii > "2010-01-01")
+    return res.status(400).send("Nu ai varsta minima necesara");
+
 console.log('Datele primite:', { numepre, data_nasterii, mail, telefon});
 try{
+
+    const esteEmailulUnic = await utils.isEmailUnique(mail);
+    if (!esteEmailulUnic){
+        return res.status(400).send("Emailul exista deja");
+    }
+
+    const esteTelefonulUnic = await utils.isPhoneUnique(telefon);
+    if (!esteTelefonulUnic){
+        return res.status(400).send("Telefonul exista deja");
+    }
+
 const userDeAdaugat = {numepre,data_nasterii,mail,telefon};
 const result = await utils.insertUser(userDeAdaugat);
 console.log(result);

@@ -120,11 +120,36 @@ function deleteUser(id) {
       return "eroare!";
     });
 }
+
+function isEmailUnique(email){
+  return userDb.findOne({where: {emailPersoana: email}})
+  .then(user =>{
+    return user == null; // true daca nu exista
+  })
+  .catch(error =>{
+    console.log("Eroare la verificarea unicitatii emailului", error);
+    throw error;
+  })
+}
+
+function isPhoneUnique(phone){
+  return userDb.findOne({where: {numarTelefon: phone}})
+  .then(user =>{
+    return user == null; // true daca nu exista
+  })
+  .catch(error =>{
+    console.log("Eroare la verificarea unicitatii numarului de telefon", error);
+    throw error;
+  })
+}
+
 module.exports = {
   resetDatabase,
   getAllUsers,
   getUserById,
   insertUser,
   deleteUser,
-  updateUser
+  updateUser,
+  isEmailUnique,
+  isPhoneUnique
 };
