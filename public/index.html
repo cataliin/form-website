@@ -74,16 +74,16 @@
         <p>Înscriere Pirați la cuțite</p>
         <form action="/submit-form" method="post">
                 <label for="numepre">Nume si prenume:</label><br>
-            <input type="text" id="numepre" name="numepre">
+            <input type="text" id="numepre" name="numepre" required>
             <br>
             <label for="mail">Adresa de mail:</label><br>
-            <input type="email" id="mail" name="mail">
+            <input type="email" id="mail" name="mail" required>
             <br>
             <label for="telefon">Numar de telefon:</label><br>
-            <input type="number" id="telefon" name="telefon">
+            <input type="number" id="telefon" name="telefon" required>
             <br>
             <label for="data_nasterii">Data nasterii:</label><br>
-            <input type="date" id="data_nasterii" name="data_nasterii">
+            <input type="date" id="data_nasterii" name="data_nasterii" required> 
             <br>
                 <input type="submit" value="Submit">
         </form>

@@ -75,12 +75,19 @@ function getUserById(id) {
 }
 
 function insertUser(user) {
+  console.log("InsertUser called with: ",user);
   return userDb
-    .create(user)
+    .create({
+      numePersoana: user.numepre,
+      dataNasterii: user.data_nasterii,
+      emailPersoana: user.mail,
+      numarTelefon: user.telefon
+    })
     .then(() => {
       return "succes";
     })
-    .catch(() => {
+    .catch((error) => {
+      console.log("Eroare aparuta:",error);
       return "eroare!";
     });
 }
