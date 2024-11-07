@@ -168,8 +168,7 @@ a:active {color: #faf2f4;}
 .sponsori{
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    width: 60vw;
+    gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     
