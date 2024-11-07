@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nume Proiect</title>
+    <title>Pirati la Cutite</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/341c0d86b2.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div></div>
-    <div></div>
-    <div></div>
+    
+    <div class="meniusus">
+        <a href="#descrieremeniu">Descriere</a>
+        <a href="#invitatimeniu">Invitați</a>
+        <a href="#detaliimeniu">Detalii</a>
+        <a href="#formular">Mă înscriu!</a>
+    </div>
+    <h1 class="header">Pirați la cuțite</h1>
+
+
     <header>
-        <h1>Pirati la cutite</h1>
         <section class="icon">
-            <i class="fa-brands fa-instagram" id="instagram"> </i>
-                <i class="fa-brands fa-facebook"></i>
-           </section>
+            <a href="https://www.instagram.com/pirati.la.cutite/profilecard/?igsh=MXZ3cWpxbTFsajBtZg==" class="fa-brands fa-instagram" ></a>
+        </section>
     </header>
 
-    <section class="prezentare">
+    <section class="prezentare" id="descrieremeniu">
         <ul>
         <li>Nutriția echilibrată este esențială în viața unui student, susținându-i atât sănătatea fizică, cât și performanța academică. O dietă bogată în vitamine și minerale ajută la menținerea concentrării, a energiei și a bunăstării mentale. Într-o perioadă în care stresul și programul încărcat pot afecta imunitatea, alimentația sănătoasă devine un aliat puternic pentru studenți, reducând riscul de îmbolnăviri și promovând obiceiuri alimentare benefice pe termen lung</li><br>
         <li>Workshop-ul de gatit -Pirati la cutite este un proiect care isi doreste sa aduca in lumina, mediul culinar si usurinta cu care poti avea grija de sanatatea ta ,ca student ,abordand un kit de retete gustoase,usor de realizat si mai ales recomandate  de un nutritionist de top. </li><br>
@@ -28,23 +34,23 @@
     </ul>
     </section>
 
-    <section class="invitati">
+    <section class="invitati" id="invitatimeniu">
         <h2>Invitați speciali</h2>
         <div class="invitat">
-            <p>Robert Ionut Florea</p>
-            <p>Specialist în nutriție</p>
+            <p class="robert">Robert Ionuț Florea</p>
+            <i><p>Specialist în nutriție</p></i>
         </div>
         <div class="invitat"> 
-            <p>Dragos Neacsa</p>
-            <p>Bucătar și jurat</p>
+            <p class="dragos">Dragoș Neacșa</p>
+            <i><p>Bucătar și jurat</p></i>
         </div>
         <div class="invitat">
-            <p>George Aldea</p>
-            <p>Prezentator</p>
+            <p class="george">George Aldea</p>
+            <i><p>Prezentator</p></i>
         </div>
     </section>
 
-    <section class="detalii">
+    <section class="detalii" id="detaliimeniu">
         <div class="ce-vei-invata">
             <h3>Ce vei învăța?</h3>
             <ul>
@@ -63,12 +69,12 @@
         </div>
     </section>
 
-    <footer class="sponsori">
-        <a href="https://ase.ro/"> <button>Academia de Studii Economice</button> </a>
+    <div class="sponsori">
+        <a href="https://ase.ro/"><button>Academia de Studii Economice</button> </a>
         <a href="https://www.lidl.ro/"> <button>Lidl</button></a>
         <a href="https://www.barilla.com/ro-ro"><button>Barilla</button></a>
         <a href="https://www.ariel.co.uk/en-gb"><button>Ariel</button></a>
-    </footer>
+    </div>
 
     <section class="formular" id="formular">
         <p>Înscriere Pirați la cuțite</p>
@@ -80,7 +86,7 @@
             <input type="email" id="mail" name="mail" required>
             <br>
             <label for="telefon">Numar de telefon:</label><br>
-            <input type="number" id="telefon" name="telefon" required>
+            <input type="text" id="telefon" name="telefon" required>
             <br>
             <label for="data_nasterii">Data nasterii:</label><br>
             <input type="date" id="data_nasterii" name="data_nasterii" required> 
